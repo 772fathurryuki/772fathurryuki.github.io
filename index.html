@@ -4,111 +4,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Novel Kawaii | PWA App</title>
+  <title>Novel Kawaii | Fantasy World</title>
   <link rel="manifest" href="manifest.json">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
     :root {
-      --bg-color: #f0f8ff;
-      --card-bg: #fff;
-      --header-bg: #ffffffee;
-      --sidebar-bg: #ffffffdd;
-      --text-color: #333;
-      --accent-color: #ff69b4;
-      --soft-pink: #ffe4ec;
+      --primary: #ff8ec7;
+      --secondary: #a0d8ef;
+      --bg: linear-gradient(135deg, #dff1ff, #f5e1ff);
+      --glass: rgba(255, 255, 255, 0.4);
+      --text: #333;
+      --text-light: #666;
     }
-
-    [data-theme="dark"] {
-      --bg-color: #1c1c1e;
-      --card-bg: #2c2c2e;
-      --header-bg: #3a3a3c;
-      --sidebar-bg: #3a3a3c;
-      --text-color: #f5f5f5;
-      --accent-color: #ff69b4;
-      --soft-pink: #4a4a4c;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      transition: all 0.3s ease;
-    }
-
-    body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .header { position: fixed; top: 0; width: 100%; background: var(--header-bg); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .header h1 { color: var(--accent-color); font-size: 22px; }
-    .header button { padding: 8px 16px; background: var(--accent-color); color: white; border: none; border-radius: 20px; }
-
-    .container { display: flex; width: 100%; margin-top: 60px; }
-    .sidebar { width: 250px; background: var(--sidebar-bg); padding: 20px; border-right: 2px solid var(--soft-pink); display: flex; flex-direction: column; gap: 20px; }
-    .profile { text-align: center; }
-    .profile img { width: 80px; height: 80px; border-radius: 50%; }
-    .content { flex: 1; overflow-y: auto; padding: 20px; }
-    .novel-feed { display: flex; flex-direction: column; gap: 20px; }
-    .novel-card { background: var(--card-bg); padding: 20px; border-radius: 20px; }
-    .novel-card a { font-size: 1.3em; color: var(--accent-color); text-decoration: none; }
-    .share-btn { padding: 8px 12px; background: var(--soft-pink); border: none; border-radius: 15px; }
-
-    footer { padding: 15px; text-align: center; background: var(--sidebar-bg); }
-
-    @media (max-width: 768px) { .sidebar { display: none; } }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: var(--bg); min-height: 100vh; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; }
+    header { width: 100%; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; background: var(--glass); backdrop-filter: blur(10px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); z-index: 10; }
+    header h1 { color: var(--primary); font-weight: 700; font-size: 26px; }
+    .toggle-theme { background: var(--primary); color: white; border: none; padding: 10px 18px; border-radius: 50px; cursor: pointer; transition: background 0.3s; }
+    main { padding: 120px 20px 40px; max-width: 1000px; width: 100%; }
+    .profile { text-align: center; margin-bottom: 40px; }
+    .profile img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .profile h2 { margin-top: 10px; font-weight: 500; }
+    .profile p { color: var(--text-light); }
+    .novel-card { background: var(--glass); border-radius: 20px; padding: 20px; margin: 20px 0; backdrop-filter: blur(15px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .novel-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+    .novel-card h3 { color: var(--primary); font-weight: 600; margin-bottom: 10px; }
+    .novel-card p { color: var(--text-light); }
+    .share-btn { margin-top: 15px; padding: 10px 20px; border: none; background: var(--secondary); color: white; border-radius: 50px; cursor: pointer; transition: background 0.3s; }
+    .share-btn:hover { background: var(--primary); }
+    footer { margin: 30px 0; color: var(--text-light); }
+    @media (max-width: 768px) { header h1 { font-size: 22px; } }
   </style>
 </head>
 <body>
-
-  <div class="header">
-    <h1>Novel Kawaii</h1>
-    <button onclick="toggleDarkMode()">🌙</button>
+<header>
+  <h1>Novel Kawaii</h1>
+  <button class="toggle-theme" onclick="toggleDarkMode()">🌙 Mode</button>
+</header>
+<main>
+  <div class="profile">
+    <img src="icon-192x192.png" alt="Avatar">
+    <h2>Fathur</h2>
+    <p>belajar melalui genangan air</p>
   </div>
-
-  <div class="container">
-    <div class="sidebar">
-      <div class="profile">
-        <img src="icon-192x192.png" alt="Avatar">
-        <h2>Fathur</h2>
-        <p>belajar melalui genangan air</p>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="novel-feed">
-        <div class="novel-card">
-          <a href="#">🌸 Judul Novel 1</a>
-          <p>Petualangan ajaib dan lucu di dunia fantasi penuh warna!</p>
-          <button class="share-btn" onclick="shareNovel('Judul Novel 1', '#')">Bagikan</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>&copy; 2025 Novel Kawaii. All rights reserved.</footer>
-
-  <script>
-    function toggleDarkMode() {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    }
-
-    (function () {
-      const saved = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', saved);
-    })();
-
-    function shareNovel(title, url) {
-      if (navigator.share) {
-        navigator.share({ title: title, url: url });
-      } else { alert('Fitur share tidak tersedia.'); }
-    }
-  </script>
+  <div class="novel-card"><h3>🌸 Judul Novel 1</h3><p>Petualangan lucu dan menegangkan di dunia fantasi yang penuh keajaiban.</p><button class="share-btn" onclick="shareNovel('Judul Novel 1', '#')">Bagikan</button></div>
+  <div class="novel-card"><h3>🌼 Judul Novel 2</h3><p>Kisah cinta rahasia di antara para penyihir dan makhluk ajaib.</p><button class="share-btn" onclick="shareNovel('Judul Novel 2', '#')">Bagikan</button></div>
+</main>
+<footer>&copy; 2025 Novel Kawaii | All rights reserved</footer>
+<script>
+  function toggleDarkMode() { const current = document.documentElement.getAttribute('data-theme'); const next = current === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', next); localStorage.setItem('theme', next); }
+  (function () { const saved = localStorage.getItem('theme') || 'light'; document.documentElement.setAttribute('data-theme', saved); })();
+  function shareNovel(title, url) { if (navigator.share) { navigator.share({ title: title, url: url }); } else { alert('Fitur share tidak tersedia di perangkat ini.'); } }
+</script>
 </body>
 </html>

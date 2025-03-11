@@ -1,15 +1,14 @@
 
 {
   "name": "Novel Kawaii",
-  "short_name": "Kawaii Novel",
-  "description": "Baca novel kawaii dan family-friendly online!",
-  "start_url": "/",
+  "short_name": "Novel Kawaii",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#f0f8ff",
-  "theme_color": "#ff69b4",
-  "orientation": "portrait",
-  "icons": [
-    { "src": "icon-192x192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icon-512x512.png", "sizes": "512x512", "type": "image/png" }
-  ]
+  "background_color": "#ffffff",
+  "description": "Baca novel kawaii favoritmu!",
+  "icons": [{
+    "src": "icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
 }
