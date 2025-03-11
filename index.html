@@ -34,6 +34,8 @@
     .profile img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     .profile h2 { margin-top: 10px; font-weight: 500; color: var(--text); }
     .profile p { color: var(--text-light); }
+    .about-btn { margin-top: 20px; display: inline-block; padding: 12px 25px; background: var(--secondary); color: white; border-radius: 30px; text-decoration: none; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: background 0.3s ease, transform 0.2s ease; }
+    .about-btn:hover { background: var(--primary); transform: translateY(-3px); }
     .novel-card { background: var(--glass); border-radius: 20px; padding: 20px; margin: 20px 0; backdrop-filter: blur(15px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .novel-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
     .novel-card h3 { color: var(--primary); font-weight: 600; margin-bottom: 10px; }
@@ -54,6 +56,7 @@
     <img src="icon-192x192.png" alt="Avatar">
     <h2>Fathur</h2>
     <p>belajar melalui genangan air</p>
+    <a href="#about" class="about-btn">Tentang Aku 🌸</a>
   </div>
   <div class="novel-card"><h3>🌸 Judul Novel 1</h3><p>Petualangan lucu dan menegangkan di dunia fantasi yang penuh keajaiban.</p><button class="share-btn" onclick="shareNovel('Judul Novel 1', '#')">Bagikan</button></div>
   <div class="novel-card"><h3>🌼 Judul Novel 2</h3><p>Kisah cinta rahasia di antara para penyihir dan makhluk ajaib.</p><button class="share-btn" onclick="shareNovel('Judul Novel 2', '#')">Bagikan</button></div>
