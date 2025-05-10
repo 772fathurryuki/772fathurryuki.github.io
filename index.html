@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fathur - Terminal Portfolio 2025</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="terminal-title">fatur@localhost: ~</div>
+      <div class="buttons">
+        <span class="btn red"></span>
+        <span class="btn yellow"></span>
+        <span class="btn green"></span>
+      </div>
+    </div>
+    <div class="terminal-body">
+      <pre><span class="glitch-text">> Hello, I'm Fathur</span></pre>
+      <pre class="typed-text"></pre>
+      <br/>
+      <div class="info-card">
+        <h2>About Me</h2>
+        <p>SEO Enthusiast. Anime Lover. Terminal Addict.</p>
+      </div>
+      <div class="info-card">
+        <h2>Portfolio</h2>
+        <ul>
+          <li><a href="#">Article: Optimizing for Google Discover</a></li>
+          <li><a href="#">Case Study: 10K Organic in 2 Months</a></li>
+          <li><a href="#">HTML Landing Page Template</a></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h2>Contact</h2>
+        <p>Email: fathur@terminal.me</p>
+        <a href="#" class="btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+
+  <audio src="https://freesound.org/data/previews/66/66717_931655-lq.mp3" autoplay loop hidden></audio>
+  <script>
+    const text = "I'm a digital explorer in the world of search engines and stories.";
+    const typedText = document.querySelector('.typed-text');
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 50);
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
