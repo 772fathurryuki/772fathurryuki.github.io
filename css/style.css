@@ -1,0 +1,61 @@
+<style>
+    body {
+        background-color: #0d1117;
+        color: #c9d1d9;
+        font-family: "Courier New", monospace;
+    }
+
+    .navbar {
+        background-color: #161b22;
+    }
+
+    .nav-link {
+        color: #58a6ff !important;
+    }
+
+    .btn-primary {
+        background-color: #238636;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #2ea043;
+    }
+
+    .iconBox a {
+        color: #58a6ff;
+    }
+
+    .iconBox a:hover {
+        color: #79c0ff;
+    }
+
+    .terminal-text {
+        font-family: "Courier New", monospace;
+        color: #58a6ff;
+        text-shadow: 0 0 10px #58a6ff;
+    }
+
+    .card {
+        background-color: #161b22;
+        border: 1px solid #30363d;
+    }
+
+    .card-title {
+        color: #c9d1d9;
+    }
+
+    .card-text {
+        color: #8b949e;
+    }
+
+    footer {
+        background-color: #161b22;
+        padding: 10px;
+        text-align: center;
+    }
+
+    footer p {
+        color: #8b949e;
+    }
+</style>
