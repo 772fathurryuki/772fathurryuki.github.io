@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+:root {
+    --bg-dark: #1c1c1c;
+    --fg-light: #f0f0f0;
+    --fg-dark: #8a8a8a;
+    --primary: #5f6368;
+    --highlight: #00b0b9;
+    --border: #444444;
+    --error: #f44336;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--fg-light);
+    font-family: 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.navbar {
+    background-color: var(--bg-dark);
+    color: var(--fg-light);
+    border-bottom: 2px solid var(--border);
+    padding: 10px;
+}
+
+.navbar a {
+    color: var(--fg-light);
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--highlight);
+}
+
+.themeSwitch {
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-dark);
+    display: flex;
+    border-radius: 50%;
+    cursor: pointer;
+    justify-content: center;
+    margin: auto;
+    border: 1px solid var(--fg-dark);
+}
+
+.themeSwitch::before {
+    content: url(../img/icon/sun.png);
+    margin-top: 8px;
+}
+
+.themeSwitch.active::before {
+    content: url(../img/icon/moon.png);
+}
+
+.row {
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.textBox h2 {
+    color: var(--fg-light);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    line-height: 1.4em;
+}
+
+.textBox h2 span {
+    font-size: 1.2rem;
+    color: var(--highlight);
+}
+
+.row .textBox .btn,
+.form-control {
+    border: 1px solid var(--fg-dark);
+    background-color: transparent;
+    color: var(--fg-light);
+}
+
+.card-body .go,
+.contact-link a {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 8px 20px;
+    background-color: var(--highlight);
+    color: var(--fg-light);
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.card-body .go:hover,
+.contact-link a:hover {
+    background-color: var(--fg-dark);
+}
+
+.card {
+    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    margin-top: 3rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    transition: all ease 0.4s;
+}
+
+.iconBox li {
+    font-size: 20px;
+    display: flex;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.iconBox li a {
+    border-radius: 50%;
+    color: var(--fg-light);
+    background: var(--bg-dark);
+    box-shadow: 0 2px 6px
